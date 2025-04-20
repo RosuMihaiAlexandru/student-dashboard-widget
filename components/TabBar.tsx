@@ -13,7 +13,7 @@ export default function TabBar({ tabs, activeTab, onClick, unread }: TabProps) {
       {tabs.map((tab) => (
         <button
           key={tab}
-          className={`relative px-4 py-2 ${
+          className={`relative px-2 md:px-4 py-2 ${
             activeTab === tab ? "border-b-2 border-blue-500" : ""
           }`}
           onClick={() => onClick(tab)}
