@@ -21,7 +21,8 @@ export default function StudentDashboard() {
   const [openTab, setOpenTab] = useState<string | null>(null);
   const [sidePanelTab, setSidePanelTab] = useState<string | null>(null);
   const [doneItems, setDoneItems] = useState<Record<string, string[]>>({});
-
+  const [hasMounted, setHasMounted] = useState(false);
+  
   useEffect(() => {
     const stored = localStorage.getItem("doneItems");
     if (stored) setDoneItems(JSON.parse(stored));
@@ -56,6 +57,13 @@ export default function StudentDashboard() {
 
   const filteredItems = (tab: string) =>
     (fullData[tab] || []).filter((item) => !(doneItems[tab] || []).includes(item));
+
+  
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  
+  if (!hasMounted) return null;
 
   return (
     <div>
