@@ -15,7 +15,7 @@ export default function Accordion({ items, onViewAll }: AccordionProps) {
           </li>
         ))}
       </ul>
-      <button onClick={onViewAll} className="mt-2 text-blue-600 underline">
+      <button onClick={onViewAll} className="mt-2 text-blue-600 underline view-all-button">
         View All
       </button>
     </div>

@@ -13,7 +13,7 @@ export default function SidePanel({ title, items, onMarkDone, onClose }: SidePan
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (panelRef.current && !panelRef.current.contains(event.target as Node)) {
+      if (panelRef.current && !panelRef.current.contains(event.target as Node) && event.target !== document.querySelector('.view-all-button')) {
         onClose();
       }
     }
