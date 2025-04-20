@@ -1,7 +1,5 @@
 
-import dynamic from 'next/dynamic';
-
-const StudentDashboard = dynamic(() => import("../components/StudentDashboard"), { ssr: false });
+import StudentDashboard from '../components/StudentDashboard';
 
 export default function Home() {
   return (
